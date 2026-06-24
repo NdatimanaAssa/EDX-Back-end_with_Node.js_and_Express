@@ -9,16 +9,19 @@ This repository contains all the labs and projects completed during the **Back-e
 
 ```
 EDX-Back-end_with_Node.js_and_Express/
-└── applications-with-Node.js-and-React/
-    └── CD220Labs/
-        ├── http_server/        ← Building HTTP servers with Node.js
-        ├── async_callback/     ← Async programming: callbacks, promises, async/await
-        ├── expressjs/          ← Express.js server, routing, middleware, authentication
-        ├── react_pages/        ← First React page using CDN
-        ├── react-apps/         ← React app created with Create React App
-        ├── react_class_component/ ← React class components and functional components
-        ├── props_and_states/   ← React props and state management
-        └── todoapp/            ← Todo app built with React
+├── applications-with-Node.js-and-React/
+│   └── CD220Labs/
+│       ├── http_server/        ← Building HTTP servers with Node.js
+│       ├── async_callback/     ← Async programming: callbacks, promises, async/await
+│       ├── expressjs/          ← Express.js server, routing, middleware, authentication
+│       ├── react_pages/        ← First React page using CDN
+│       ├── react-apps/         ← React app created with Create React App
+│       ├── react_class_component/ ← React class components and functional components
+│       ├── props_and_states/   ← React props and state management
+│       └── todoapp/            ← Todo app built with React
+└── mxpfu-nodejsLabs/
+    └── routes/
+        └── users.js            ← REST API with Express: GET, POST, PUT, DELETE
 ```
 
 ---
@@ -105,6 +108,23 @@ Key concepts learned:
 - Building a complete todo application with React
 - Managing a list of items in state
 - Adding and removing items dynamically
+
+---
+
+### 9. `mxpfu-nodejsLabs`
+Built a REST API with Express.js to manage a list of users.
+
+- **GET** `/users` — Retrieve all users
+- **GET** `/users/:email` — Retrieve a single user by email
+- **POST** `/users` — Add a new user via query params
+- **PUT** `/users/:email` — Update any user attribute (`firstName`, `lastName`, `email`, `DOB`)
+- **DELETE** `/users/:email` — Delete a user by email
+
+Key concepts learned:
+- Express Router (`express.Router()`)
+- Route parameters (`req.params`) and query strings (`req.query`)
+- Filtering and mutating in-memory arrays as a data store
+- Partial updates — only modifying fields that are provided in the request
 
 ---
 
