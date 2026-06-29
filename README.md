@@ -19,9 +19,13 @@ EDX-Back-end_with_Node.js_and_Express/
 │       ├── react_class_component/ ← React class components and functional components
 │       ├── props_and_states/   ← React props and state management
 │       └── todoapp/            ← Todo app built with React
-└── mxpfu-nodejsLabs/
-    └── routes/
-        └── users.js            ← REST API with Express: GET, POST, PUT, DELETE
+├── mxpfu-nodejsLabs/
+│   └── routes/
+│       └── users.js            ← REST API with Express: GET, POST, PUT, DELETE
+└── nodejs_PracticeProject_AuthUserMgmt/
+    ├── index.js                ← Auth: register, login, JWT, session middleware
+    └── router/
+        └── friends.js          ← Protected CRUD API for friends (GET, POST, PUT, DELETE)
 ```
 
 ---
@@ -111,7 +115,31 @@ Key concepts learned:
 
 ---
 
-### 9. `mxpfu-nodejsLabs`
+### 9. `nodejs_PracticeProject_AuthUserMgmt`
+A full authentication and user management REST API built with Express.js, JWT, and sessions.
+
+**Auth endpoints (`index.js`):**
+- **POST** `/register` — Register a new user (username + password stored in-memory, rejects duplicates)
+- **POST** `/login` — Authenticate user, generate a JWT access token, store it in session
+- **Middleware** on `/friends` — Verifies session and JWT token before granting access
+
+**Friends endpoints (`router/friends.js`) — protected, requires login:**
+- **GET** `/friends` — Retrieve all friends
+- **GET** `/friends/:email` — Retrieve a single friend by email
+- **POST** `/friends` — Add a new friend
+- **PUT** `/friends/:email` — Update a friend's `firstName`, `lastName`, or `DOB`
+- **DELETE** `/friends/:email` — Delete a friend by email
+
+Key concepts learned:
+- User registration with duplicate check using `Array.filter()`
+- JWT generation with `jwt.sign()` and verification with `jwt.verify()`
+- Session management with `express-session` to persist the access token across requests
+- Protecting routes with custom auth middleware using `req.session.authorization`
+- Combining `express.Router()` with app-level middleware for clean route separation
+
+---
+
+### 10. `mxpfu-nodejsLabs`
 Built a REST API with Express.js to manage a list of users.
 
 - **GET** `/users` — Retrieve all users
