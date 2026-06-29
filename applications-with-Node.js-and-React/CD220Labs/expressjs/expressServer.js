@@ -28,7 +28,19 @@ app.get("/:name", (req, res) => {
     res.send("Hello " + req.params.name);
 });
 
+app.get("/fetchmont/:num", (req, res) => {
+    let num = req.params.num;
+    let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    if (num >= 1 && num <= 12) {
+        res.send(month[num - 1]);
+    } else {
+        res.send("Invalid month number");
+    }
+});
+
 // Start the server and listen on port 3333
 app.listen(3333, () => {
     console.log(`Listening at http://localhost:3333`);
 });
+
+
